@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harshit Mehra - Data Scientist</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js for Hero chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Loading -->
+  <div class="loader" id="loader">>>> Initializing Portfolio...</div>
+
+  <!-- Chinmay's Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="trail1"></div>
+  <div class="cursor-trail" id="trail2"></div>
+  <div class="cursor-trail" id="trail3"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">&lt; HM /&gt;</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div>
+      <h1>Turning Data into Decisions</h1>
+      <p>I’m Harshit Mehra, a Data Scientist passionate about NLP, ML, and visualization.</p>
+      <div class="btns">
+        <a href="#">Resume</a>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="chart-box">
+      <canvas id="chart"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="network"></canvas>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="impact">
+    <h2>Impact in Numbers</h2>
+    <div class="impact-grid">
+      <div class="impact-card"><h3>1.3M+</h3><p>Products Indexed</p></div>
+      <div class="impact-card"><h3>25K+</h3><p>Jobs Matched</p></div>
+      <div class="impact-card"><h3>0.89</h3><p>Precision@10</p></div>
+      <div class="impact-card"><h3>250+</h3><p>Menu Items Scored</p></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Semantic Product Search</h3>
+        <p>Built with FAISS + Transformers for 1.3M+ items.</p>
+        <a href="#">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>JobGenie NLP Recommender</h3>
+        <p>Resume-to-job matcher, 25K+ profiles matched.</p>
+        <a href="#">GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>McDonald's Health Score Tracker</h3>
+        <p>Streamlit dashboard analyzing 250+ items.</p>
+        <a href="#">Demo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" id="skills">
+    <h2>Technical Arsenal</h2>
+    <div class="skill-categories">
+      <div class="skill-card"><h3>Programming</h3><p>Python, SQL, R</p></div>
+      <div class="skill-card"><h3>ML/NLP</h3><p>Transformers, FAISS, LangChain</p></div>
+      <div class="skill-card"><h3>Visualization</h3><p>Power BI, Streamlit, Plotly</p></div>
+      <div class="skill-card"><h3>Tools</h3><p>Git, FastAPI, AWS</p></div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline" id="timeline">
+    <h2>My Journey</h2>
+    <div class="line">
+      <div class="entry"><h3>Data Scientist | Team Lead</h3><p>LaunchLab – 2025–Present</p></div>
+      <div class="entry"><h3>MS Data Science</h3><p>University of Arizona – 2023–2024</p></div>
+      <div class="entry"><h3>B.Tech Computer Science</h3><p>LNCT Bhopal – 2019–2023</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Let’s Connect</h2>
+    <div class="contact-grid">
+      <div class="contact-card">📧 harshitmehra122@gmail.com</div>
+      <div class="contact-card">🔗 LinkedIn</div>
+      <div class="contact-card">🐙 GitHub</div>
+      <div class="contact-card">📄 Resume</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
