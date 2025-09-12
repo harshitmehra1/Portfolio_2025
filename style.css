@@ -414,3 +414,34 @@ a, button {
 
 
 
+.project-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;  /* keeps original proportions */
+  border-radius: 12px;  /* optional */
+}
+
+
+
+/* Contact cards reset link styles */
+.contact-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;           /* Keep original text color */
+  background: #fafafa;
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.25s;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border: 2px solid var(--success);
+  color: var(--success);   /* Accent color on hover */
+}
+
+
