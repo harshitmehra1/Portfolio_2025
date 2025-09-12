@@ -20,7 +20,7 @@
 
   <!-- Navigation -->
   <nav>
-    <div class="logo">&lt; HM /&gt;</div>
+    <div class="logo"><span class="logo-icon">&lt;/&gt;</span>Harshit</div>
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -30,24 +30,30 @@
     </ul>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div>
-      <h1>Turning Data into Decisions</h1>
-      <p>I’m Harshit Mehra, a Data Scientist passionate about NLP, ML, and visualization.</p>
-      <div class="btns">
-        <a href="#">Resume</a>
-        <a href="https://github.com/harshitmehra1">GitHub</a>
-        <a href="https://www.linkedin.com/in/harshitmehra1/">LinkedIn</a>
-      </div>
+  <!-- Hero -->`
+<section class="hero" id="hero">
+  <div>
+    <h1>Turning Data into Decisions</h1>
+    <p>
+      I’m <span class="hero-name gradient">Harshit Mehra</span>, a
+      <span id="typed-text"></span>
+      <span class="type-cursor">|</span>
+    </p>
+    <div class="btns">
+      <a href="#">Resume</a>
+      <a href="https://github.com/harshitmehra1">GitHub</a>
+      <a href="https://www.linkedin.com/in/harshitmehra1/">LinkedIn</a>
     </div>
-    <div class="chart-box">
-      <canvas id="chart"></canvas>
-    </div>
-    <div class="chart-box">
-      <canvas id="network"></canvas>
-    </div>
-  </section>
+  </div>
+  <div class="chart-box">
+    <canvas id="chart"></canvas>
+  </div>
+  <div class="chart-box">
+    <canvas id="network"></canvas>
+  </div>
+</section>
+
+
 
   <!-- Impact -->
   <section class="impact">
@@ -60,27 +66,111 @@
     </div>
   </section>
 
+
+
+
   <!-- Projects -->
+
   <section class="projects" id="projects">
-    <h2>Featured Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Semantic Product Search</h3>
-        <p>Built with FAISS + Transformers for 1.3M+ items.</p>
-        <a href="#">GitHub →</a>
-      </div>
-      <div class="project-card">
-        <h3>JobGenie NLP Recommender</h3>
-        <p>Resume-to-job matcher, 25K+ profiles matched.</p>
-        <a href="#">GitHub →</a>
-      </div>
-      <div class="project-card">
-        <h3>McDonald's Health Score Tracker</h3>
-        <p>Streamlit dashboard analyzing 250+ items.</p>
-        <a href="#">Demo →</a>
+  <h2>Latest Work</h2>
+  <div class="experience-grid">
+
+    <!-- Project 1: Semantic Product Search -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="semantic_search.png" alt="Semantic Search" class="project-logo">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-content">
+            <h3>Semantic Product Search Engine</h3>
+            <span class="company">Dec 2024</span>
+            <p class="description">
+              High-efficiency semantic search system for 1.3M+ retail items using natural language queries.
+            </p>
+            <div class="achievements">
+              <h4>Highlights</h4>
+              <ul>
+                <li>Fine-tuned Sentence Transformer for vector matching.</li>
+                <li>Query filter extraction via FLAN-T5-small.</li>
+                <li>Benchmarked FAISS vs Elasticsearch (BM25).</li>
+                <li>Achieved 0.89 Precision@10.</li>
+              </ul>
+            </div>
+            <p><strong>Tech:</strong> Python, FAISS, Hugging Face, Elasticsearch, PostgreSQL</p>
+            <a href="#">GitHub →</a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- Project 2: JobGenie NLP -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="jobgenie.png" alt="JobGenie NLP" class="project-logo">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-content">
+            <h3>JobGenie NLP Recommender</h3>
+            <span class="company">June 2025</span>
+            <p class="description">
+              Resume-based job recommender combining keyword heuristics, semantic matching, and filters.
+            </p>
+            <div class="achievements">
+              <h4>Highlights</h4>
+              <ul>
+                <li>Extracted resume skills with spaCy + PDFMiner.</li>
+                <li>Matched profiles to 25K+ jobs using Transformers.</li>
+                <li>Regex-based experience parsing for ranking.</li>
+                <li>Streamlit app with title & location filters.</li>
+              </ul>
+            </div>
+            <p><strong>Tech:</strong> Python, spaCy, PDFMiner, Transformers, Streamlit</p>
+            <a href="#">GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: McDonald’s Health Score Tracker -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="mcdonalds.png" alt="McDonald's Tracker" class="project-logo">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-content">
+            <h3>McDonald’s Health Score Tracker</h3>
+            <span class="company">July 2025</span>
+            <p class="description">
+              Nutrient-based scoring system & dashboard to evaluate the healthiness of 250+ menu items.
+            </p>
+            <div class="achievements">
+              <h4>Highlights</h4>
+              <ul>
+                <li>Built scoring model using weighted nutrients.</li>
+                <li>Interactive dashboard with filters.</li>
+                <li>Dynamic Plotly visualizations.</li>
+                <li>Health tags: Healthy · Moderate · Unhealthy.</li>
+              </ul>
+            </div>
+            <p><strong>Tech:</strong> Python, Pandas, Streamlit, Plotly, Power BI</p>
+            <a href="#">Demo →</a> | <a href="#">GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="view-all">
+    <a href="projects.html">→ View All Projects</a>
+  </div>
+</section>
+
+
+
 
   <!-- Skills -->
   <section class="skills" id="skills">

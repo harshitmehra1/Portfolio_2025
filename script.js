@@ -174,3 +174,45 @@ function animateNetwork() {
   requestAnimationFrame(animateNetwork);
 }
 animateNetwork();
+
+
+
+
+
+
+
+
+// ===============================
+// Typewriter Effect for Hero
+// ===============================
+const roles = ["Data Scientist ", "Data Analyst ", "ML Engineer ", "NLP Enthusiast ", "Developer "];
+let roleIndex = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+const typedText = document.getElementById("typed-text");
+
+function typeEffect() {
+  const fullText = roles[roleIndex];
+
+  if (isDeleting) {
+    currentText = fullText.substring(0, charIndex--);
+  } else {
+    currentText = fullText.substring(0, charIndex++);
+  }
+
+  typedText.textContent = currentText;
+
+  if (!isDeleting && charIndex === fullText.length) {
+    isDeleting = true;
+    setTimeout(typeEffect, 1000); // pause at full word
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeEffect, 300); // pause before typing new word
+  } else {
+    setTimeout(typeEffect, isDeleting ? 60 : 120);
+  }
+}
+
+typeEffect();

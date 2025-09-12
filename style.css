@@ -44,7 +44,7 @@
 
     /* --- Hero --- */
     .hero{
-      min-height:100vh; padding:120px 40px 60px;
+      min-height:100vh; padding:80px 40px 60px;
       display:flex; align-items:center; justify-content:space-between; gap:60px;
       max-width:1200px; margin:0 auto;
     }
@@ -112,15 +112,11 @@
       border-radius:50%; position:fixed; pointer-events:none; z-index:9999; opacity:.3;
     }
 
-
-
-
     #network {
   width: 100%;
   height: 100%;
   display: block;
 }
-
 
 
 .chart-box canvas {
@@ -132,3 +128,286 @@
 a, button {
   cursor: none !important;
 }
+.logo {
+  font-weight: 700;
+  font-size: 20px;   /* a bit bigger */
+  color: var(--text);
+}
+
+.logo-icon {
+  color: var(--success);   /* teal accent for </> */
+  margin-right: 6px;
+  font-weight: 800;
+}
+.hero-name {
+  font-size: 1.4em;   /* make name bigger */
+  font-weight: 700;
+}
+
+.gradient {
+  background: linear-gradient(135deg, var(--accent), var(--success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+
+
+
+
+
+.hero-name {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.gradient {
+  background: linear-gradient(135deg, var(--accent), var(--success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.type-cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: bold;
+  animation: blink 0.7s infinite;
+}
+
+
+
+/* projects */
+
+
+.projects {
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Smaller, balanced cards */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 400px;   /* reduced from 400px */
+  perspective: 2200px;
+  cursor: pointer;
+  position: relative;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); /* was 0.8s */
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+
+
+/* ===== Soft Orange Shine effect on front ===== */
+.flip-card-front::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,165,0,0) 0%,        /* transparent edges */
+    rgba(255,165,0,0.25) 50%,    /* soft orange center */
+    rgba(255,165,0,0) 100%       /* fade out */
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  filter: blur(12px);   /* soft glow */
+  pointer-events: none;
+}
+
+.flip-card:hover .flip-card-front::before {
+  opacity: 1;
+  animation: shine 1.2s ease-out forwards;
+}
+
+@keyframes shine {
+  from { transform: translateX(-120%) rotate(25deg); }
+  to   { transform: translateX(120%) rotate(25deg); }
+}
+
+
+
+
+
+/* Front: logo/image */
+.flip-card-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-logo {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+}
+
+.flip-card:hover .project-logo {
+  transform: scale(1.08);
+}
+
+/* Back: details */
+.flip-card-back {
+  background-color: #fafafa;
+  transform: rotateY(180deg);
+  padding: 22px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.card-content .company {
+  display: block;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.card-content .description {
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.card-content .achievements h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-content .achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-content .achievements li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.card-content .achievements li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-size: 13px;
+}
+
+.card-content a {
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.view-all {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.view-all a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 350px;
+  }
+}
+
