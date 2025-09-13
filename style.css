@@ -303,6 +303,7 @@ a, button {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.9;
 }
 
 .project-logo {
@@ -445,3 +446,143 @@ a, button {
 }
 
 
+
+/* Skills */
+
+/* Fullscreen Skills Section */
+.skills {
+  min-height: 90vh;     /* 🔥 makes the section take up full viewport height */
+  padding: 80px 20px;    /* space around content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertically center everything */
+}
+
+/* Layout: how cards are arranged */
+.skill-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 26px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/* Responsive tweak */
+@media (max-width: 900px) {
+  .skill-categories {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skill-categories {
+    grid-template-columns: 1fr; /* stack vertically */
+    max-width: 350px;
+  }
+}
+
+/* Style: how each card looks */
+.skill-card {
+  background: #f9f9ff;  
+  border-radius: 12px;
+  padding: 30px; 
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.skill-card h3 {
+  font-size: 1.2rem; 
+  margin-bottom: 10px;
+  color: var(--accent, #00bfa6);
+}
+
+.skill-card p {
+  font-size: 0.9rem;  
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 5px; 
+}
+
+
+
+
+
+
+
+/* Birds canvas behind contact */
+#vanta-birds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.contact {
+  position: relative;
+  min-height: 80vh; /* full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1; /* keep content above birds */
+  text-align: center;
+}
+
+/* Grid layout for buttons */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2×2 grid */
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 1000px; /* keeps them centered */
+  width: 100%;
+}
+
+
+
+/* Button styles */
+.contact-card {
+  display: flex;                  /* use flex for centering */
+  align-items: center;            /* vertical center */
+  justify-content: center;        /* horizontal center */
+  gap: 8px;                       /* space between emoji and text */
+  
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.10); /* semi-transparent glass effect */
+  border-radius: 16px;
+  padding: 26px;
+  min-height: 70px;               /* keeps all buttons equal height */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);    /* frosted glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  transition: 0.25s;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  border: 2px solid var(--success);
+  color: var(--success);
+  background: rgba(255, 255, 255, 0.4); /* brighter glass on hover */
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

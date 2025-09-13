@@ -127,7 +127,7 @@
               </ul>
             </div>
             <p><strong>Tech:</strong> Python, spaCy, PDFMiner, Transformers, Streamlit</p>
-            <a href="https://github.com/harshitmehra1/job-recommendation" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            <a href="https://github.com/harshitmehra1/jobGenie" target="_blank" rel="noopener noreferrer">GitHub →</a>
           </div>
         </div>
       </div>
@@ -175,15 +175,54 @@
 
 
   <!-- Skills -->
-  <section class="skills" id="skills">
-    <h2>Technical Arsenal</h2>
-    <div class="skill-categories">
-      <div class="skill-card"><h3>Programming</h3><p>Python, SQL, R</p></div>
-      <div class="skill-card"><h3>ML/NLP</h3><p>Transformers, FAISS, LangChain</p></div>
-      <div class="skill-card"><h3>Visualization</h3><p>Power BI, Streamlit, Plotly</p></div>
-      <div class="skill-card"><h3>Tools</h3><p>Git, FastAPI, AWS</p></div>
+ <!-- Skills -->
+<section class="skills" id="skills">
+  <h2>Technical Arsenal</h2>
+  <div class="skill-categories">
+
+    <!-- Programming -->
+    <div class="skill-card">
+      <h3>Programming</h3>
+      <p>Python, SQL, R</p>
     </div>
-  </section>
+
+    <!-- Machine Learning -->
+    <div class="skill-card">
+      <h3>Machine Learning</h3>
+      <p>Model training, Evaluation, <br>  Vector search</p>
+    </div>
+
+    <!-- Natural Language Processing -->
+    <div class="skill-card">
+      <h3>NLP</h3>
+      <p>Query parsing, Embeddings, Semantic search</p>
+    </div>
+
+    <!-- Visualization -->
+    <div class="skill-card">
+      <h3>Visualization</h3>
+      <p>Power BI, Excel, Streamlit, <br> Plotly, Matplotlib, Seaborn</p>
+    </div>
+
+    <!-- Databases & Tools -->
+    <div class="skill-card">
+      <h3>Databases & Tools</h3>
+      <p>PostgreSQL, MySQL, PySpark, <br> Git, Jupyter, FastAPI</p>
+    </div>
+
+    <!-- CS Fundamentals -->
+    <div class="skill-card">
+      <h3>Core CS Fundamentals</h3>
+      <p>DSA, OOP, DBMS, <br> System Design</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
 
   <!-- Timeline -->
   <section class="timeline" id="timeline">
@@ -196,16 +235,54 @@
     </div>
   </section>
 
+
+
+
+  
   <!-- Contact -->
+<!-- Contact -->
 <section class="contact" id="contact">
-  <h2>Let’s Connect</h2>
-  <div class="contact-grid">
-    <a href="mailto:harshitmehra122@gmail.com" class="contact-card" target="_blank" rel="noopener noreferrer">📧 harshitmehra122@gmail.com</a>
-    <a href="https://www.linkedin.com/in/harshitmehra1" class="contact-card" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-    <a href="https://github.com/harshitmehra1" class="contact-card" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
-    <a href="#" class="contact-card" target="_blank" rel="noopener noreferrer">📄 Resume</a>
+  <div id="vanta-birds"></div>
+  <div class="contact-content">
+    <h2>Let’s Connect</h2>
+    <div class="contact-grid">
+      <a href="mailto:harshitmehra122@gmail.com" class="contact-card" target="_blank" rel="noopener noreferrer">📧 harshitmehra122@gmail.com</a>
+      <a href="https://www.linkedin.com/in/harshitmehra1" class="contact-card" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+      <a href="https://github.com/harshitmehra1" class="contact-card" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      <a href="#" class="contact-card" target="_blank" rel="noopener noreferrer">📄 Resume</a>
+    </div>
   </div>
 </section>
+
+
+
+<!-- Vanta.js scripts (make sure these are included before your own script.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+
+<script>
+  VANTA.BIRDS({
+  el: "#vanta-birds",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: 0xffffff,   // white background
+  color1: 0xff6b35,            // orange
+  color2: 0x5B4FFF,            // purple/blue
+  birdSize: 1.20,
+  wingSpan: 25.00,
+  separation: 50.00,
+  alignment: 50.00,
+  cohesion: 20.00,
+  quantity: 4.20               // 🔥 bird density
+})
+
+</script>
+
 
 
   <script src="script.js"></script>
