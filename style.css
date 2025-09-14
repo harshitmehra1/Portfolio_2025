@@ -4,7 +4,7 @@
     /* keep site tidy */
     * { margin:0; padding:0; box-sizing:border-box; }
 
-    /* Hide default cursor like Chinmay’s */
+    /* Hide default cursor */
     :root {
       --bg:#fafafa;
       --text:#111;
@@ -205,6 +205,8 @@ a, button {
 
 .projects {
   padding: 60px 20px;
+  padding-top: 60px;
+  min-height: 93vh;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -448,69 +450,89 @@ a, button {
 
 
 /* Skills */
-
 /* Fullscreen Skills Section */
 .skills {
-  min-height: 90vh;     /* 🔥 makes the section take up full viewport height */
-  padding: 80px 20px;    /* space around content */
+  min-height: 93vh;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* vertically center everything */
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Default gradient background */
+background: radial-gradient(
+  circle at var(--mx, 50%) var(--my, 50%), 
+  #f9f9ff, 
+  rgba(91, 79, 255, 0.112), 
+  rgba(0, 212, 170, 0.105)
+);
+
+
+  transition: background-position 0.1s ease;
 }
 
 /* Layout: how cards are arranged */
 .skill-categories {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 26px;
   justify-content: center;
   margin: 0 auto;
   max-width: 1000px;
+  position: relative;
+  z-index: 1; /* keep above background */
 }
 
 /* Responsive tweak */
 @media (max-width: 900px) {
   .skill-categories {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    grid-template-columns: repeat(2, 1fr);
     max-width: 700px;
   }
 }
 
 @media (max-width: 600px) {
   .skill-categories {
-    grid-template-columns: 1fr; /* stack vertically */
+    grid-template-columns: 1fr;
     max-width: 350px;
   }
 }
 
 /* Style: how each card looks */
+/* Style: how each skill card looks (Glass effect) */
 .skill-card {
-  background: #f9f9ff;  
-  border-radius: 12px;
-  padding: 30px; 
+  background: rgba(255, 255, 255, 0.12);  /* semi-transparent */
+  border-radius: 16px;
+  padding: 30px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);            /* frosted glass */
+  -webkit-backdrop-filter: blur(10px);    /* Safari support */
+  transition: 0.25s ease;
+  z-index: 1;
 }
 
+.skill-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 255, 255, 0.35);  /* brighter glass on hover */
+}
+
+
+
 .skill-card h3 {
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
   margin-bottom: 10px;
   color: var(--accent, #00bfa6);
 }
 
 .skill-card p {
-  font-size: 0.9rem;  
+  font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
-  padding: 0 5px; 
+  padding: 0 5px;
 }
-
-
-
-
-
 
 
 /* Birds canvas behind contact */
@@ -525,7 +547,7 @@ a, button {
 
 .contact {
   position: relative;
-  min-height: 80vh; /* full screen */
+  min-height: 80vh; /* section height */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -549,35 +571,42 @@ a, button {
   width: 100%;
 }
 
-
-
 /* Button styles */
 .contact-card {
   display: flex;                  /* use flex for centering */
   align-items: center;            /* vertical center */
   justify-content: center;        /* horizontal center */
-  gap: 8px;                       /* space between emoji and text */
-  
+  gap: 10px;                      /* space between logo and text */
+  width: 320px;
   text-decoration: none;
   color: inherit;
-  background: rgba(255, 255, 255, 0.10); /* semi-transparent glass effect */
+  background: rgba(255, 255, 255, 0.12); /* semi-transparent glass effect */
   border-radius: 16px;
   padding: 26px;
   min-height: 70px;               /* keeps all buttons equal height */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);    /* frosted glass blur */
+  backdrop-filter: blur(10px);    
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  transition: 0.25s;
+  transition: 0.25s ease;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
+  cursor: none;                   /* respect custom cursor */
 }
 
 .contact-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.02);
   border: 2px solid var(--success);
   color: var(--success);
-  background: rgba(255, 255, 255, 0.4); /* brighter glass on hover */
+  background: rgba(255, 255, 255, 0.35); /* brighter glass on hover */
+}
+
+/* Logo styling inside buttons */
+.contact-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 /* Responsive: stack on small screens */

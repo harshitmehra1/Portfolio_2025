@@ -216,3 +216,20 @@ function typeEffect() {
 }
 
 typeEffect();
+
+
+
+
+
+
+
+
+const skillsSection = document.querySelector('.skills');
+
+skillsSection.addEventListener('mousemove', (e) => {
+  const { width, height, left, top } = skillsSection.getBoundingClientRect();
+  const x = ((e.clientX - left) / width) * 100;
+  const y = ((e.clientY - top) / height) * 100;
+  skillsSection.style.setProperty('--mx', `${x}%`);
+  skillsSection.style.setProperty('--my', `${y}%`);
+});
