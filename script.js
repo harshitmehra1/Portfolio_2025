@@ -222,8 +222,6 @@ typeEffect();
 
 
 
-
-
 const skillsSection = document.querySelector('.skills');
 
 skillsSection.addEventListener('mousemove', (e) => {
@@ -233,3 +231,36 @@ skillsSection.addEventListener('mousemove', (e) => {
   skillsSection.style.setProperty('--mx', `${x}%`);
   skillsSection.style.setProperty('--my', `${y}%`);
 });
+
+
+
+// Timeline image change on scroll
+const entries = document.querySelectorAll(".entry");
+const photo = document.getElementById("timeline-photo");
+
+window.addEventListener("scroll", () => {
+  let index = 0;
+
+  entries.forEach((entry, i) => {
+    const rect = entry.getBoundingClientRect();
+    if (rect.top < window.innerHeight / 2) {
+      index = i;
+    }
+    entry.classList.remove("active");
+  });
+
+  // highlight active entry
+  entries[index].classList.add("active");
+
+  // update photo src based on active entry
+  const newImage = entries[index].getAttribute("data-image");
+  if (photo.src !== newImage) {
+    photo.style.opacity = 0;
+    setTimeout(() => {
+      photo.src = newImage;
+      photo.style.opacity = 1;
+    }, 200);
+  }
+});
+
+
