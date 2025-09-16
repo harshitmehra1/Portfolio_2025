@@ -1,10 +1,14 @@
 // Loader
-window.addEventListener("load", () => {
-  setTimeout(() => document.getElementById("loader").classList.add("hidden"), 600);
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 800); // smooth fade-out
 });
 
+
 // ===============================
-// Chinmay's Cursor (as-is)
+//  Cursor (as-is)
 // ===============================
 const cursor = document.getElementById('cursor');
 const trails = [

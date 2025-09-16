@@ -8,7 +8,7 @@
     :root {
       --bg:#fafafa;
       --text:#111;
-      --accent:#5B4FFF;     /* Chinmay’s accent used by cursor , Try: #ff6b35 , #9B5DE5 , #7D7D7D*/
+      --accent:#5B4FFF;     /*  accent used by cursor , Try: #ff6b35 , #9B5DE5 , #7D7D7D*/
       --success:#00D4AA;
       --border:#e8e8e8;
     }
@@ -26,13 +26,73 @@ html {
 }
 
     /* --- Loading Screen --- */
-    .loader {
-      position:fixed; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      background:#0d0d0d; color:#00ff99; font-family:monospace; font-size:1.1rem;
-      z-index:10000; transition:.5s;
-    }
-    .loader.hidden { opacity:0; visibility:hidden; }
+/* Loader container */
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff; /* white background */
+  z-index: 10000;
+  font-family: monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Gradient effect on main text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Spinner styled as gradient */
+.spinner {
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: bold;
+  animation: spin 1s steps(4) infinite;
+
+  background: linear-gradient(135deg, var(--accent), var(--success));
+  background-clip: text;              /* Standard property */
+  -webkit-background-clip: text;      /* Chrome/Safari/Edge */
+  color: transparent;                 /* Fallback for browsers */
+  -webkit-text-fill-color: transparent; /* Required for Safari */
+}
+
+
+@keyframes spin {
+  0% { content: "|"; }
+  25% { content: "/"; }
+  50% { content: "-"; }
+  75% { content: "\\"; }
+}
+
+/* Trick: use pseudo-element for rotating text */
+.spinner::after {
+  content: "|";
+  animation: spinText 1s steps(4) infinite;
+}
+
+@keyframes spinText {
+  0% { content: "|"; }
+  25% { content: "/"; }
+  50% { content: "-"; }
+  75% { content: "\\"; }
+}
+
+
+
+
+
 
     /* --- Navigation --- */
     nav{
@@ -126,7 +186,7 @@ html {
     .contact-card:hover{ transform:translateY(-5px); border:2px solid var(--success); }
 
     /* =========================
-       CHINMAY'S CURSOR (as-is)
+        CURSOR (as-is)
        ========================= */
     .cursor{
       width:20px; height:20px;
@@ -630,7 +690,8 @@ background: radial-gradient(
 
 .timeline-image img {
   width: 100%;
-  max-width: 340px;
+  max-width: 400px;
+  min-width: 280px;  
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   opacity: 0;
