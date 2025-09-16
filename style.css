@@ -588,7 +588,7 @@ background: radial-gradient(
 
 /* Timeline entry */
 .entry {
-  margin-bottom: 220px;  /* 🔥 vertical spacing between entries */
+  margin-bottom: 250px;  /* 🔥 vertical spacing between entries */
   position: relative;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -699,6 +699,15 @@ background: radial-gradient(
 }
 
 
+/* Neat bullets for project list */
+.proj-bullets {
+  margin: 8px 0 14px 18px;
+  padding: 0;
+}
+.proj-bullets li {
+  margin: 6px 0;
+  line-height: 1.6;
+}
 
 
 
