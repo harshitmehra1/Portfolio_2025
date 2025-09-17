@@ -987,7 +987,7 @@ background: radial-gradient(
     justify-items: center;                 /* centers your fixed-width cards */
   }
   .contact-card {
-    width: 200px;                          /* your chosen size */
+    width: 180px;                          /* your chosen size */
     min-height: 60px;
     padding: 10px;
     font-size: 0.82rem;
@@ -1018,6 +1018,15 @@ background: radial-gradient(
   padding-bottom: 2px;
 }
 
+.coursework {
+  gap: 7px;
+  margin: 9px 0 15px;
+}
+
+.coursework span {
+  padding: 4px 7px;
+  font-size: 0.73rem;
+}
 
 }
 
