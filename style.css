@@ -637,6 +637,7 @@ background: radial-gradient(
   max-width: 1200px;
   margin: 0 auto;
   padding: 100px 20px;
+  margin-bottom: -9%;
 }
 
 /* Left vertical line */
@@ -854,3 +855,173 @@ background: radial-gradient(
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+
+  /*   Responsiveness   */
+
+/* ===== Touch devices: disable custom cursor (prevents odd behavior) ===== */
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+  .cursor, .cursor-trail { display: none !important; }
+}
+
+/* =========================
+   📱 Mobile layout (<=600px)
+   ========================= */
+@media (max-width: 600px) {
+  /* Navbar */
+  nav ul { display: none; }              /* hide right menu */
+  nav .logo { font-size: 16px; }
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 22px;
+    min-height: 80vh;                    /* shorter hero */
+    padding: 70px 18px 40px;
+  }
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.90rem; }
+
+  .btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .btns a {
+    padding: 10px 15px;
+    font-size: 0.7rem;
+    margin-right: 0;                     /* use gap instead */
+  }
+
+  /* Charts: keep ONLY the network graph
+  #chart { display: none !important; }   /* hide the line chart */
+  .chart-box {
+    width: 300px;
+    height: 200px;
+    /* margin: 0 auto; */
+  }
+
+
+
+  /* Projects */
+  .projects { padding-top: 80px; }
+  .experience-grid {
+    grid-template-columns: 1fr;          /* 1 per row */
+    gap: 20px;
+    max-width: 420px;
+  }
+  .flip-card { height: 340px; }
+  .card-content h3 { font-size: 16px; }
+  .card-content .description { font-size: 12.5px; }
+  .card-content .achievements li { font-size: 12px; }
+
+  /* Fix for B.Tech project bullets */
+  .proj-bullets li {
+    font-size: 0.78rem;                  /* smaller for mobile */
+    line-height: 1.5;
+    margin: 4px 0;
+  }
+
+  /* Skills (3×2 like you wanted) */
+  .skills h2 { font-size: 1.2rem; margin-bottom: 20px; }
+  .skill-categories {
+    grid-template-columns: repeat(2, 1fr);  /* 3 across */
+    gap: 14px;
+    max-width: 90%;
+  }
+  .skill-card {
+    padding: 16px;
+    font-size: 0.65rem;
+    min-width: 0;                          /* prevents overflow */
+  }
+  .skill-card h3 { font-size: 0.85rem; margin-bottom: 6px; }
+  .skill-card p { font-size: 0.75rem; }
+
+  /* Timeline (My Journey) */
+  .timeline h2 { font-size: 1.4rem; 
+                  margin-bottom: 5px;
+                  padding-bottom: 2px;}
+  .timeline-container {
+    grid-template-columns: 1fr;            /* single column */
+    gap: 24px;
+    padding: 40px 18px;
+  }
+  .line { padding-left: 24px; }            /* a bit tighter */
+  .entry { margin-bottom: 140px; }
+  .entry h3 { font-size: 1.05rem; }
+  .entry p { font-size: 0.78rem; line-height: 1.6; }
+
+  .timeline-image {
+    position: relative;                    /* remove sticky on mobile */
+    top: auto;
+    height: auto;
+    margin-top: -60px;                     /* brings image closer to text */
+    display: flex;
+    justify-content: center;
+  }
+  .timeline-image img {
+    position: relative !important;
+    opacity: 1 !important;
+    max-width: 85vw;
+    width: 100%;
+    min-width: 0;                          /* override desktop min */
+    height: auto;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  }
+
+  /* Contact (Let’s Connect) */
+  .contact h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2×2 */
+    gap: 10px;
+    justify-items: center;                 /* centers your fixed-width cards */
+  }
+  .contact-card {
+    width: 200px;                          /* your chosen size */
+    min-height: 60px;
+    padding: 10px;
+    font-size: 0.82rem;
+  }
+  .contact-icon {
+    width: 16px; height: 16px;
+  }
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: 1fr; /* text left, photo right */
+  gap: 40px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  /* margin-bottom: -9%;  ← remove this line */
+}
+
+/* Hide the timeline photo panel entirely on mobile */
+.timeline-image,
+.timeline-image img {
+  display: none !important;
+}
+
+/* Slightly tighten the bottom spacing now that the photo is gone */
+.timeline-container {
+  padding-bottom: 2px;
+}
+
+
+}
+
+
+
+
+
