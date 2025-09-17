@@ -1017,7 +1017,10 @@ background: radial-gradient(
 .timeline-container {
   padding-bottom: 2px;
 }
-
+.timeline-logo {
+  height: 30px;
+  margin-right: 6px;
+}
 .coursework {
   gap: 7px;
   margin: 9px 0 15px;
